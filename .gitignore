@@ -163,3 +163,9 @@ results/
 ipynb_checkpoints/
 ckpts/
 result*
+data/jf17k/processed/
+data/wd50k/processed/
+data/wikipeople/processed/
+data/wd50k_33/processed/
+data/wd50k_66/processed/
+data/wd50k_100/processed/
