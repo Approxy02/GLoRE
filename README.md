@@ -1,4 +1,4 @@
-# XXX
+# GLoRE
 
 Official resources of **"Bridging Global and Local Representations via Relation-Entity Pairs in a Hyper-Relational KG"**. **XX** \[[paper]()\]. 
 
@@ -79,9 +79,9 @@ python -u ./src/run.py --dataset "wd50k_33" --device "0" --vocab_size 38599 --vo
 ```
 
 ```
-python -u ./src/run.py --dataset "wd50k_66" --device "4" --vocab_size 27751 --vocab_file "./data/wd50k_66/vocab.txt" --train_file "./data/wd50k_66/train+valid.json" --test_file "./data/wd50k_66/test.json" --ground_truth_file "./data/wd50k_66/all.json" --num_workers 1 --num_relations 403 --max_seq_len 19 --max_arity 10 --hidden_dim 256 --sync_layers 4 --global_activation elu --fusion_layers 1 --trans_layers 6 --local_dropout 0.1 --local_heads 4 --decoder_activation "gelu" --batch_size 1024 --lr 5e-4 --weight_decay 0.01 --entity_soft 0.2 --relation_soft 0.1 --epoch 150 --warmup_proportion 0.15 --num_layer_rel 2 --early_stop 25 --use_relgraph True --use_global True --max_per_type 40 --max_neighbors_num 40 --dynamic_sampling True --use_uncertainty True --global_dropout 0.4
+python -u ./src/run.py --dataset "wd50k_66" --device "0" --vocab_size 27751 --vocab_file "./data/wd50k_66/vocab.txt" --train_file "./data/wd50k_66/train+valid.json" --test_file "./data/wd50k_66/test.json" --ground_truth_file "./data/wd50k_66/all.json" --num_workers 1 --num_relations 403 --max_seq_len 19 --max_arity 10 --hidden_dim 256 --sync_layers 4 --global_activation elu --fusion_layers 1 --trans_layers 6 --local_dropout 0.1 --local_heads 4 --decoder_activation "gelu" --batch_size 1024 --lr 5e-4 --weight_decay 0.01 --entity_soft 0.2 --relation_soft 0.1 --epoch 150 --warmup_proportion 0.15 --num_layer_rel 2 --early_stop 25 --use_relgraph True --use_global True --max_per_type 40 --max_neighbors_num 40 --dynamic_sampling True --use_uncertainty True --global_dropout 0.4
 ```
 
 ```
-python -u ./src/run.py --dataset "wd50k_100" --device "4" --vocab_size 19071 --vocab_file "./data/wd50k_100/vocab.txt" --train_file "./data/wd50k_100/train+valid.json" --test_file "./data/wd50k_100/test.json" --ground_truth_file "./data/wd50k_100/all.json" --num_workers 1 --num_relations 278 --max_seq_len 19 --max_arity 10 --hidden_dim 256 --sync_layers 4 --global_activation elu --fusion_layers 1 --trans_layers 6 --local_dropout 0.1 --local_heads 4 --decoder_activation "gelu" --batch_size 1024 --lr 5e-4 --weight_decay 0.01 --entity_soft 0.2 --relation_soft 0.1 --epoch 150 --warmup_proportion 0.15 --num_layer_rel 2 --early_stop 25 --use_relgraph True --use_global True --max_per_type 40 --max_neighbors_num 40 --dynamic_sampling True --use_uncertainty True --global_dropout 0.4
+python -u ./src/run.py --dataset "wd50k_100" --device "0" --vocab_size 19071 --vocab_file "./data/wd50k_100/vocab.txt" --train_file "./data/wd50k_100/train+valid.json" --test_file "./data/wd50k_100/test.json" --ground_truth_file "./data/wd50k_100/all.json" --num_workers 1 --num_relations 278 --max_seq_len 19 --max_arity 10 --hidden_dim 256 --sync_layers 4 --global_activation elu --fusion_layers 1 --trans_layers 6 --local_dropout 0.1 --local_heads 4 --decoder_activation "gelu" --batch_size 1024 --lr 5e-4 --weight_decay 0.01 --entity_soft 0.2 --relation_soft 0.1 --epoch 150 --warmup_proportion 0.15 --num_layer_rel 2 --early_stop 25 --use_relgraph True --use_global True --max_per_type 40 --max_neighbors_num 40 --dynamic_sampling True --use_uncertainty True --global_dropout 0.4
 ```
