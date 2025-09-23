@@ -84,12 +84,12 @@ parser.add_argument("--num_head", type=int, default=8) # 8
 # ablation study
 parser.add_argument("--use_relgraph", type=str2bool, default=True) # whether to use relation graph
 parser.add_argument("--use_global", type=str2bool, default=True) # whether to use global context
-parser.add_argument("--dynamic_sampling", type=str2bool, default=False, help="whether to use dynamic sampling")
+parser.add_argument("--dynamic_sampling", type=str2bool, default=True, help="whether to use dynamic sampling")
 
 # others for training
 parser.add_argument("--epoch", type=int, default=300) # 200
 parser.add_argument("--warmup_proportion", type=float, default=0.2)
-parser.add_argument("--early_stop", type=int, default=300, help="early stopping patience, 안하려면 300으로") # 5
+parser.add_argument("--early_stop", type=int, default=300, help="early stopping patience")
 
 # directory position settings
 parser.add_argument("--result_save_dir", type=str, default="results")
