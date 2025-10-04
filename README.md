@@ -59,31 +59,19 @@ Please modify those hyperparametes according to your needs and characteristics o
 For JF17K, to train and evalute on this dataset using default hyperparametes, please run:
 
 ```
-python -u ./src/run.py --dataset "jf17k" --device "0" --vocab_size 29148 --vocab_file "./data/jf17k/vocab.txt" --train_file "./data/jf17k/train.json" --test_file "./data/jf17k/test.json" --ground_truth_file "./data/jf17k/all.json" --num_workers 1 --num_relations 501 --max_seq_len 11 --max_arity 6 --hidden_dim 256 --sync_layers 3 --global_activation elu --fusion_layers 1 --trans_layers 6 --local_dropout 0.2 --local_heads 4 --decoder_activation "gelu" --batch_size 1024 --lr 5e-4 --weight_decay 0.002 --entity_soft 0.9 --relation_soft 0.9 --epoch 300 --warmup_proportion 0.2 --num_layer_rel 2 --max_per_type 40 --max_neighbors_num 70 --global_dropout 0.1
+python -u ./src/run.py --dataset "jf17k" --device "0" --vocab_size 29148 --vocab_file "./data/jf17k/vocab.txt" --train_file "./data/jf17k/train.json" --test_file "./data/jf17k/test.json" --ground_truth_file "./data/jf17k/all.json" --num_workers 1 --num_relations 501 --max_seq_len 11 --max_arity 6 --hidden_dim 256 --sync_layers 3 --global_activation elu --fusion_layers 1 --trans_layers 6 --local_dropout 0.2 --local_heads 4 --decoder_activation "gelu" --batch_size 1024 --lr 5e-4 --weight_decay 0.002 --entity_soft 0.9 --relation_soft 0.9 --epoch 400 --warmup_proportion 0.05 --rel_layers 2 --max_per_type 40 --max_neighbors_num 70 --global_dropout 0.1
 ```
 
 For Wikipeople, to train and evalute on this dataset using default hyperparametes, please run:
 
 ```
-python -u ./src/run.py --dataset "wikipeople" --device "0" --vocab_size 35005 --vocab_file "./data/wikipeople/vocab.txt" --train_file "./data/wikipeople/train+valid.json" --test_file "./data/wikipeople/test.json" --ground_truth_file "./data/wikipeople/all.json" --num_workers 1 --num_relations 178 --max_seq_len 13 --max_arity 7 --hidden_dim 256 --sync_layers 4 --global_activation elu --fusion_layers 1 --trans_layers 6 --local_dropout 0.1 --local_heads 4 --decoder_activation "gelu" --batch_size 1024 --lr 5e-4 --weight_decay 0.01 --entity_soft 0.2 --relation_soft 0.1 --epoch 100 --warmup_proportion 0.4 --num_layer_rel 2 --max_per_type 25 --max_neighbors_num 25 --global_dropout 0.4
+python -u ./src/run.py --dataset "wikipeople" --device "0" --vocab_size 35005 --vocab_file "./data/wikipeople/vocab.txt" --train_file "./data/wikipeople/train+valid.json" --test_file "./data/wikipeople/test.json" --ground_truth_file "./data/wikipeople/all.json" --num_workers 1 --num_relations 178 --max_seq_len 13 --max_arity 7 --hidden_dim 256 --sync_layers 4 --global_activation elu --fusion_layers 1 --trans_layers 6 --local_dropout 0.1 --local_heads 4 --decoder_activation "gelu" --batch_size 1024 --lr 5e-4 --weight_decay 0.01 --entity_soft 0.2 --relation_soft 0.1 --epoch 80 --warmup_proportion 0.1 --rel_layers 2 --max_per_type 25 --max_neighbors_num 25 --global_dropout 0.4
 ```
 
 For WD50K, to train and evalute on this dataset using default hyperparametes, please run:
 
 ```
-python -u ./src/run.py --dataset "wd50k" --device "0" --vocab_size 47688 --vocab_file "./data/wd50k/vocab.txt" --train_file "./data/wd50k/train+valid.json" --test_file "./data/wd50k/test.json" --ground_truth_file "./data/wd50k/all.json" --num_workers 1 --num_relations 531 --max_seq_len 19 --max_arity 10 --hidden_dim 256 --sync_layers 4 --global_activation elu --fusion_layers 1 --trans_layers 6 --local_dropout 0.1 --local_heads 4 --decoder_activation "gelu" --batch_size 1024 --lr 5e-4 --weight_decay 0.01 --entity_soft 0.2 --relation_soft 0.1 --epoch 150 --warmup_proportion 0.15 --num_layer_rel 2 --max_per_type 40 --max_neighbors_num 40 --global_dropout 0.4
-```
-
-```
-python -u ./src/run.py --dataset "wd50k_33" --device "0" --vocab_size 38599 --vocab_file "./data/wd50k_33/vocab.txt" --train_file "./data/wd50k_33/train+valid.json" --test_file "./data/wd50k_33/test.json" --ground_truth_file "./data/wd50k_33/all.json" --num_workers 1 --num_relations 474 --max_seq_len 19 --max_arity 10 --hidden_dim 256 --sync_layers 4 --global_activation elu --fusion_layers 1 --trans_layers 6 --local_dropout 0.1 --local_heads 4 --decoder_activation "gelu" --batch_size 1024 --lr 5e-4 --weight_decay 0.01 --entity_soft 0.2 --relation_soft 0.1 --epoch 150 --warmup_proportion 0.15 --num_layer_rel 2 --max_per_type 40 --max_neighbors_num 40 --global_dropout 0.4
-```
-
-```
-python -u ./src/run.py --dataset "wd50k_66" --device "0" --vocab_size 27751 --vocab_file "./data/wd50k_66/vocab.txt" --train_file "./data/wd50k_66/train+valid.json" --test_file "./data/wd50k_66/test.json" --ground_truth_file "./data/wd50k_66/all.json" --num_workers 1 --num_relations 403 --max_seq_len 19 --max_arity 10 --hidden_dim 256 --sync_layers 4 --global_activation elu --fusion_layers 1 --trans_layers 6 --local_dropout 0.1 --local_heads 4 --decoder_activation "gelu" --batch_size 1024 --lr 5e-4 --weight_decay 0.01 --entity_soft 0.2 --relation_soft 0.1 --epoch 150 --warmup_proportion 0.15 --num_layer_rel 2 --max_per_type 40 --max_neighbors_num 40  --global_dropout 0.4
-```
-
-```
-python -u ./src/run.py --dataset "wd50k_100" --device "0" --vocab_size 19071 --vocab_file "./data/wd50k_100/vocab.txt" --train_file "./data/wd50k_100/train+valid.json" --test_file "./data/wd50k_100/test.json" --ground_truth_file "./data/wd50k_100/all.json" --num_workers 1 --num_relations 278 --max_seq_len 19 --max_arity 10 --hidden_dim 256 --sync_layers 4 --global_activation elu --fusion_layers 1 --trans_layers 6 --local_dropout 0.1 --local_heads 4 --decoder_activation "gelu" --batch_size 1024 --lr 5e-4 --weight_decay 0.01 --entity_soft 0.2 --relation_soft 0.1 --epoch 150 --warmup_proportion 0.15 --num_layer_rel 2 --max_per_type 40 --max_neighbors_num 40 --global_dropout 0.4
+python -u ./src/run.py --dataset "wd50k" --device "0" --vocab_size 47688 --vocab_file "./data/wd50k/vocab.txt" --train_file "./data/wd50k/train+valid.json" --test_file "./data/wd50k/test.json" --ground_truth_file "./data/wd50k/all.json" --num_workers 1 --num_relations 531 --max_seq_len 19 --max_arity 10 --hidden_dim 256 --sync_layers 5 --global_activation elu --fusion_layers 1 --trans_layers 6 --local_dropout 0.1 --local_heads 4 --decoder_activation "gelu" --batch_size 1024 --lr 5e-4 --weight_decay 0.01 --entity_soft 0.2 --relation_soft 0.1 --epoch 100 --warmup_proportion 0.1 --rel_layers 2 --max_per_type 40 --max_neighbors_num 40 --global_dropout 0.4
 ```
 
 ## Hyperparameter Tuning & Reproducibility
@@ -91,5 +79,10 @@ python -u ./src/run.py --dataset "wd50k_100" --device "0" --vocab_size 19071 --v
 Please tune the hyperparameters of our model because the best hyperparameters may be different due to randomness and dataset characteristics.
 We recommend:
 
-- Adjust hidden_dim, sync_layers, trans_layers, local_heads, dropout, lr, batch_size, weight_decay, epoch, warmup_proportion.
-- For large graphs, consider reducing max_neighbors_num / max_per_type to manage memory.
+- Adjust `hidden_dim`, `sync_layers`, `trans_layers`, `local_heads`, `dropout`, `lr`, `batch_size`, `weight_decay`, `epoch`, `warmup_proportion`.
+- For large graphs, consider reducing `max_neighbors_num` / `max_per_type` to manage memory.
+
+Also, we provide the evaluation cache used in our experiments with the code for
+reproducibility. All results (including ablations) are evaluated using the same fixed test neighbor cache, built from the training split only, with ONR disabled during evaluation.
+
+You can download the checkpoints from ().
