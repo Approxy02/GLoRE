@@ -82,7 +82,8 @@ We recommend:
 - Adjust `hidden_dim`, `sync_layers`, `trans_layers`, `local_heads`, `dropout`, `lr`, `batch_size`, `weight_decay`, `epoch`, `warmup_proportion`.
 - For large graphs, consider reducing `max_neighbors_num` / `max_per_type` to manage memory.
 
-Also, we provide the evaluation cache used in our experiments with the code for
-reproducibility. All results (including ablations) are evaluated using the same fixed test neighbor cache, built from the training split only, with ONR disabled during evaluation.
+Also, we provide the evaluation cache used in our experiments with the code for reproducibility. \
+All results (including ablations) are evaluated using the same fixed test neighbor cache, built from the training split only, with ONR disabled during evaluation.
 
-You can download the checkpoints from ().
+You can download the evaluation cache from (url).
+> Note: The evaluation caches will be provided after the anonymous review period.
