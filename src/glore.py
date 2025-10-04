@@ -1,7 +1,8 @@
 import torch
 import torch.nn as nn
 from ingram import *
-from global_module import Global_module, PairProjector
+from pair_encoder import PairProjector
+from global_module import Global_module
 from localpairlayer import LocalPairLayer
 
 class JointGlobalLocalLayer(nn.Module):
@@ -45,7 +46,7 @@ class JointGlobalLocalLayer(nn.Module):
 
         return x_local, x_global, updated_emb
 
-class Model(nn.Module):
+class GLoRE(nn.Module):
     def __init__(
         self,
         vocab_size: int,
@@ -66,7 +67,7 @@ class Model(nn.Module):
         dim_rel: int,
         hid_dim_ratio_rel: int,
         num_bin: int,
-        num_layer_rel: int,
+        rel_layers: int,
         use_relation_gnn: bool,
         use_global: bool,
         rel_triplets=None,
@@ -99,12 +100,12 @@ class Model(nn.Module):
         self.layers_rel = nn.ModuleList([
             InGramRelationLayer(
                 layer_dim_rel, layer_dim_rel, num_bin, bias=bias, num_head=num_head
-            ) for _ in range(num_layer_rel)
+            ) for _ in range(rel_layers)
         ])
 
         self.res_proj_rel = nn.ModuleList([
             nn.Linear(layer_dim_rel, layer_dim_rel, bias=bias)
-            for _ in range(num_layer_rel)
+            for _ in range(rel_layers)
         ])
 
         self.global_module = Global_module(

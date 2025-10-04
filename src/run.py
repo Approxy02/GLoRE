@@ -12,7 +12,7 @@ from torch.optim.lr_scheduler import OneCycleLR
 from tqdm import tqdm
 from reader import *
 from evaluation import *
-from model import *
+from glore import *
 from graph import *
 import numpy as np
 import random
@@ -78,7 +78,7 @@ parser.add_argument("--global_activation", type=str, default="elu") # elu
 parser.add_argument("--num_bin", type=int, default=10) # 10
 parser.add_argument("--dim_rel", type=int, default=256)
 parser.add_argument("--hid_dim_ratio_rel", type=int, default=2) # 2
-parser.add_argument("--num_layer_rel", type=int, default=2) # 2
+parser.add_argument("--rel_layers", type=int, default=2) # 2
 parser.add_argument("--num_head", type=int, default=8) # 8
 
 # ablation study
@@ -202,7 +202,7 @@ def main(limit=1e9):
     train_loader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, num_workers=args.num_workers)
     test_loader = DataLoader(test_dataset, batch_size=args.batch_size, shuffle=False, num_workers=1)
 
-    max_train_steps = args.epoch * len(train_loader)
+    max_train_steps = 500 * len(train_loader)
 
     rel_triplets = None
     
@@ -214,16 +214,16 @@ def main(limit=1e9):
     logger.info('------------------------------------------------')
 
     if len(args.device) > 1:
-        model = torch.nn.DataParallel(Model(len(vocabulary.vocab), vocabulary.num_relations, args.num_entities, args.max_arity, args.sync_layers, args.fusion_layers,
+        model = torch.nn.DataParallel(GLoRE(len(vocabulary.vocab), vocabulary.num_relations, args.num_entities, args.max_arity, args.sync_layers, args.fusion_layers,
                                             args.trans_layers, args.hidden_dim, args.local_heads, args.global_dropout, args.local_dropout, args.global_activation, args.decoder_activation,
                                             args.num_head, args.remove_mask, args.dim_rel, args.hid_dim_ratio_rel,
-                                            args.num_bin, args.num_layer_rel, args.use_relgraph, args.use_global, rel_triplets), device_ids=devices)
+                                            args.num_bin, args.rel_layers, args.use_relgraph, args.use_global, rel_triplets), device_ids=devices)
         model.to(device)
     else:
-        model = Model(len(vocabulary.vocab), vocabulary.num_relations, args.num_entities, args.max_arity, args.sync_layers, args.fusion_layers,
+        model = GLoRE(len(vocabulary.vocab), vocabulary.num_relations, args.num_entities, args.max_arity, args.sync_layers, args.fusion_layers,
                       args.trans_layers, args.hidden_dim, args.local_heads, args.global_dropout, args.local_dropout, args.global_activation, args.decoder_activation,
                       args.num_head, args.remove_mask, args.dim_rel, args.hid_dim_ratio_rel,
-                      args.num_bin, args.num_layer_rel, args.use_relgraph, args.use_global, rel_triplets).to(device)
+                      args.num_bin, args.rel_layers, args.use_relgraph, args.use_global, rel_triplets).to(device)
 
     if args.use_uncertainty:
         log_var_entity = torch.nn.Parameter(torch.zeros(1, device=device), requires_grad=True)
