@@ -1,6 +1,6 @@
 # GLoRE
 
-Official resources of **"Bridging Global and Local Representations via Relation-Entity Pairs in a Hyper-Relational KG"**. **XXX** \[[paper]()\]. 
+Official resources of **"Bridging Global and Local Representations via Relation-Entity Pairs on Hyper-Relational KGs"**. **XXX** \[[paper]()\]. 
 
 ## Overview
 
