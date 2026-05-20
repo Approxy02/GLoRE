@@ -1,6 +1,6 @@
 # [2026][KDD][GLoRE]
 
-Official implementation of **"Disentangled Global-Local Representations via Relation-Entity Pair Encoding for Hyper-Relational KGs"**, to appear at the [ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD), 2026](https://kdd2026.kdd.org/). \[[paper.pdf](https://example.com/paper.pdf)\]
+Official implementation of **"Disentangled Global-Local Representations via Relation-Entity Pair Encoding for Hyper-Relational KGs"**, to appear at the [ACM SIGKDD Conference on Knowledge Discovery and Data Mining 2026](https://kdd2026.kdd.org/). \[[Link](-)\]
 
 ## Overview
 <p align="center">
