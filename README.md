@@ -1,9 +1,9 @@
 # [2026][KDD][GLoRE]
-This is the [PyTorch](https://pytorch.org/) implementation of **GLoRE**, **G**lobal-**Lo**cal representations via **R**elation-**E**ntity pair encoding.
+This is the [PyTorch](https://pytorch.org/) implementation of **GLoRE**, **G**lobal-**Lo**cal representations via **R**elation-**E**ntity pair encoding. \[[Link](https://example.com/paper.pdf)\]
 
 ## Publication
 
-- **Title**: **Disentangled Global-Local Representations via Relation-Entity Pair Encoding for Hyper-Relational KGs.**
+- **Title**: **Joint Global-Local Representations via Relation-Entity Pair Encoding for Hyper-Relational Knowledge Graphs.**
 - **Authors**: Sangjun Ji, Sangjune Kim, Bonyou Koo, Youngho Lee, Xiongnan Jin, and Byungkook Oh.
 - **Venue**: ACM SIGKDD Conference on Knowledge Discovery and Data Mining 2026
 
